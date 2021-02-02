@@ -1,0 +1,55 @@
+version: '3.3'
+services:
+  confluence-server:
+    depends_on:
+      - postgres-server
+    environment:
+      - JVM_MINIMUM_MEMORY=$JVM_MIN
+      - JVM_MAXIMUM_MEMORY=$JVM_MAX
+      - JVM_RESERVED_CODE_CACHE_SIZE=$JVM_HEAP
+      - ATL_PROXY_NAME=site.url
+      - ATL_PROXY_PORT=443
+      - ATL_TOMCAT_SCHEME=$TOMCAT_SCHEME
+      - ATL_TOMCAT_SECURE=$TOMCAT_SECURE
+      - ATL_TOMCAT_CONTEXTPATH=wiki
+    volumes:
+      - '/var/data/confluence:/var/atlassian/application-data/confluence'
+    container_name: confluence
+    ports:
+      - '8090:8090'
+      - '8091:8091'
+    image: 'atlassian/conflunce-server:7.4.0'
+    restart: unless-stopped
+  
+  jira-server:
+    depends_on:
+      - postgres-server
+    environment:
+      - JVM_MINIMUM_MEMORY=$JVM_MIN
+      - JVM_MAXIMUM_MEMORY=$JVM_MAX
+      - JVM_RESERVED_CODE_CACHE_SIZE=$JVM_HEAP
+      - ATL_TOMCAT_PORT=8100
+      - ATL_PROXY_NAME=site.url
+      - ATL_PROXY_PORT=443
+      - ATL_TOMCAT_SCHEME=$TOMCAT_SCHEME
+      - ATL_TOMCAT_SECURE=$TOMCAT_SECURE
+      - ATL_TOMCAT_CONTEXTPATH=jira
+    volumes:
+      - '/var/data/jira:/var/atlassian/application-data/jira'
+    container_name: jira
+    ports:
+      - '8100:8100'
+    image: 'atlassian/jira-software'
+    restart: unless-stopped
+    
+  postgres-server:
+    environment:
+      - POSTGRES_PASSWORD=$PGPASSWORD
+      - POSTGRES_USER=$PGUSER
+      - POSTGRES_DB=$PGDB
+    volumes:
+      - '/var/data/postgres:/var/lib/postgresql/data'
+    container_name: postgres
+    ports:
+      - '5432:5432'
+    image: postgres:alpine

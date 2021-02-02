@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. 应用程序现代化</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Confluence" href="confluence.html" />
+    <link rel="prev" title="应用程序现代化" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/DevOps.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">培训资料：</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. 应用程序现代化</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1.1. 什么是应用程序现代化？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">1.2. 为什么要对传统应用进行现代化改造？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">1.3. 如何开始应用程序现代化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">1.4. 应用程序现代化的最佳方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#java">1.5. 针对 Java 应用程序选择合适的现代化方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">1.6. 保留在传统架构上</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">1.7. 云原生现代化</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">1.7.1. 第 1 步. 运行时现代化：减少运营成本和技术债务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">1.7.2. 第 2 步. 运营现代化：降低成本和复杂性，并提高灵活性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">1.7.3. 第 3 步. 架构现代化：实现最佳扩展和云原生敏捷性</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">1.8. 构建新的云原生应用程序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#devops">1.9. DevOps 的重要性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">1.10. 许可灵活性有助于现代化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">1.11. 结束语</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">1.12. 参考</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="confluence.html">2. Confluence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dokuwiki.html">3. Dokuwiki</a></li>
+<li class="toctree-l1"><a class="reference internal" href="redis.html">4. Redis(ToDo …)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elk.html">5. ELK(ToDo …)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitlab.html">6. Gitlab(ToDo …)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jenkins.html">7. Jenkins(ToDo …)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jira.html">8. JIRA(ToDo …)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="petclinic.html">9. Spring Cloud 开发框架(ToDo …)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wordpress.html">10. Wordpress(ToDo …)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kubernetes.html">11. K8s(ToDo …)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DevOps</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+                   
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+    <ul class="wy-breadcrumbs">
+        
+        <li><a href="../index.html">首页</a> &raquo;</li>
+        
+        <li><span class="section-number">1. </span>应用程序现代化</li>
+         
+        <li class="wy-breadcrumbs-aside">
+            <a href="https://pages.github.ibm.com/fsd-training/ctube" class="fa fa-github"> CTube</a>   
+        </li>
+        
+    </ul>
+
+    
+    <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">1. </span>应用程序现代化<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>本章带领读者了解什么是应用程序现代化（Application Modernization），应用程序现代化常见的好处和挑战，以及如何开始。</p>
+<div class="section" id="id2">
+<h2><span class="section-number">1.1. </span>什么是应用程序现代化？<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>应用程序现代化是指将现有的传统应用程序并对其平台基础设施、内部架构和（或）功能进行现代化改良的过程。今天，围绕应用程序现代化的大部分讨论都集中在单体的内部应用上–通常使用瀑布式开发流程进行更新和维护，以及如何将这些应用带入云架构和发布模式，即微服务DevOps。</p>
+<p>应用程序现代化的好处通常可以总结为提高新功能交付的速度，将现有应用的功能通过API暴露给其他服务使用，并将应用从预置式应用重新规划到云端，以达到应用规模和性能以及长期数据中心和IT战略的目的。</p>
+<p>应用程序现代化的挑战通常归结为成本和复杂性。将应用从内部应用移动到云端，而不考虑投资回报率，纯粹就是为了迁移应用。相反，其他应用程序可能会从重新构建平台或重新架构中受益，但与现有系统和基础设施严重耦合，因此现代化的复杂性可能会超过好处。</p>
+<p>应用程序现代化成功的关键，就像大多数事情一样，最终归结为战略和选择应用程序现代化项目，其中云、速度、性能、规模、新功能开发等方面的好处是为给定应用程序提供改善客户体验和投资回报率的明确路径。</p>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">1.2. </span>为什么要对传统应用进行现代化改造？<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>遗留应用程序通常也是单体应用程序。单体应用程序有两个特点，因此希望对其进行现代化改造：它们很难更新，而且很难扩展，成本很高。</p>
+<p>单体应用程序由于架构原因难以更新。因为应用程序的所有组件都是一起发布的，考虑到复杂性和集成挑战的开销，增加功能的难度和成本都很高。</p>
+<p>出于类似的原因，它们在扩展方面也面临着挑战，而且成本很高。如果一个应用程序的一个组件面临负载和性能挑战，那么就有必要将整个应用程序的规模扩大到只为需求最大的单个组件服务。这种方法伴随着相当大的计算浪费。</p>
+<p>通过将应用程序现代化，使其更多地采用微服务架构，组件更小，松散耦合，并且可以相互独立地部署和扩展。虽然这种方法带来了自己的一系列挑战，但这种方法是现代化中许多核心价值的所在。</p>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">1.3. </span>如何开始应用程序现代化<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>开始任何应用程序现代化项目的最重要方法是：对应用程序进行评估。清点你所拥有的东西几乎总是最明显的方法之一，以开始任何这样的转变。</p>
+<p>一旦你有了一个清单，你就可以开始将所有这些应用程序与x轴和y轴的难易程度和现代化后可能增加的价值进行对比。你也可以把 “潜在 “价值看作是该应用程序对客户体验和组织未来的关键性。</p>
+<p>属于这个高价值和低努力的网格右上角象限的应用程序将是最明显的，最不容易引起争议的应用程序现代化项目的开始。</p>
+<p>最棘手的决定将落在那些难以移动的高价值应用程序上。对于这些应用程序，也不需要在第一天就采取全有或全无的策略。在这些情况下，有一些应用程序现代化的方法，可以降低风险和成本，同时还能使您的投资组合朝着正确的方向发展。</p>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">1.4. </span>应用程序现代化的最佳方法<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>应用程序开发的世界已经发生了惊人的变化，新技术迅速涌入整个生态系统，产品改进和新功能也将不断出现。因此，要在这种快节奏的环境中取得成功，对于开发人员来说，快速有效地交付云原生应用程序现在至关重要。Open Liberty 和 Quarkus 最有趣的功能之一就是它们能够为开发人员提供“热重装”形式。此功能称为开发（dev）模式，可以帮助开发人员实现快速迭代的云原生应用程序开发。</p>
+<p>而使已有应用程序现代化的最佳方法之一是将它们重构为微服务，从而可以在增强敏捷性和提高交付速度的同时独立增强和扩展每个微服务。IBM®Mono2Micro 是基于 AI 的半自动化工具集，它使用新颖的机器学习算法和首创的代码生成技术来帮助您利用 AI 的能力将整体 Java 应用程序转换为微服务。</p>
+<p>对于旧版应用程序，仅使用新框架将现有功能公开为远程 API 可能非常困难，因为新框架可能会增加项目的复杂性和依赖性。而库没有这些缺点。 在本教程中，我们引入了一个轻量级的、高性能的，并且最重要的是非介入式的库，无需额外编码即可将旧版 Java API 转换为远程服务。</p>
+<p>API Connect 是一个完整、现代化、直观且可扩展的 API 平台，让您能够安全地在云端创建、公开、管理 API 并通过 API 获利，帮助您和您的客户为数字应用提供动力并促进创新。API 的基本原理帮助您了解 API 开发的基本知识和好处，为您进一步学习奠定基础。</p>
+<p>简介
+IT 行业媒体关于成功迁移到云的企业的报道铺天盖地，而且每天都有更多新的云原生应用程序被创建。然而，大多数迁移到云的应用程序是那些已经非常适合云环境的应用程序。但在过去的几十年来，企业纷纷投入了大量精力来构建更多的应用程序。2020 年的新冠病毒疫情只会增强这些现有资产对我们社会的重要性，需要以最少的投资让这些应用程序适应新的需求。</p>
+<p>企业希望从现代应用程序中获益，以便：</p>
+<ul class="simple">
+<li><p>大大缩短新的创新服务的上市时间</p></li>
+<li><p>通过与客户实时互动，重新定义客户体验，并最大限度减少业务中断</p></li>
+<li><p>优化 IT 资源以降低成本和复杂性，并获得竞争优势</p></li>
+<li><p>提高安全性并保护敏感数据</p></li>
+</ul>
+<p>要选择合适的现代化方法并实现恰当的投资回报，您需要首先了解每个应用程序的当前状态和您的业务需求。针对您的应用程序合适的现代化方法可能是：</p>
+<ul class="simple">
+<li><p>将其保留在传统架构上（不是真正的现代化，但对于某些应用程序来说是个有效的选择）</p></li>
+<li><p>使现有应用程序现代化，并在可能的情况下进行重构（利用现有投资来生成现代应用程序）</p></li>
+<li><p>从头开始构建新的替代应用程序（在某些情况下有效）</p></li>
+</ul>
+<p>本文将简要介绍第一种和第三种选项，并更详细地讨论第二种选项，以及通过实现运行时、运营和应用程序架构的现代化来使现有应用程序现代化有何意义。</p>
+</div>
+<div class="section" id="java">
+<h2><span class="section-number">1.5. </span>针对 Java 应用程序选择合适的现代化方法<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h2>
+<p>您所采取的现代化方法可能因每个应用程序而异，并且应该基于以下几个因素：</p>
+<ul class="simple">
+<li><p>应用程序的预期寿命</p></li>
+<li><p>应用程序的业务需求（例如，创新、敏捷性）</p></li>
+<li><p>成本，无论旨在降低成本还是投资业务增长</p></li>
+<li><p>技术技能和代码重用</p></li>
+</ul>
+<p>尽管有许多言论指出，针对在容器中运行的应用程序使用微服务架构非常有效，但这并不意味着它是所有应用程序的最佳选择，而且您选择的架构会极大地影响您对运行时的选择。最终目标是让每个应用程序都在能为企业提供最佳投资回报的环境中运行。下图显示了可用的主要现代化选项：</p>
+<a class="reference internal image-reference" href="../_images/choose-optimum-modernization-approach.png"><img alt="../_images/choose-optimum-modernization-approach.png" src="../_images/choose-optimum-modernization-approach.png" style="width: 700px;" /></a>
+<p>我们来更详细了解一下选择每种现代化选项的原因。</p>
+</div>
+<div class="section" id="id6">
+<h2><span class="section-number">1.6. </span>保留在传统架构上<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>您可能会选择将应用程序保留在传统架构上，因为该应用程序不具有战略意义，或者由于各种原因导致使用寿命有限。现在投入时间和资源来使这些应用程序现代化可能并不值得。保留在传统架构上可以保护您的投资，同时您还可以规划其他现代化操作，例如重新架构和重新编写应用程序。</p>
+<p>如果不进行迁移，无需执行任何操作，特别是已经在受支持的基础架构上的情况。但如果该基础架构的服务和支持终止，则需考虑升级到受支持的级别。为了保持为最新版本，修复关键安全漏洞，并在遇到问题时能够获得帮助，升级非常重要。您还将能够获得新功能和性能改进。</p>
+<p>如果您的运行时是传统的 IBM WebSphere Application Server（V8.5.5 和 9.0.5），支持将至少持续到 2030 年，无需脱离 Java 8。如果需要升级到新版本，可考虑执行运行时现代化作为替代方案。运行时现代化所带来的成本节省可以提高投资回报，如果需要，它将来还可以实现进一步的现代化。</p>
+</div>
+<div class="section" id="id7">
+<h2><span class="section-number">1.7. </span>云原生现代化<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>对于战略性应用程序，使其现代化并迁移到云有助于降低成本，提高敏捷性。在许多情况下，最终目标是能够在现代云架构和运行时上快速更新、重用和扩展应用程序的各个组件，从而大大缩短价值实现时间。一步到位可能具有挑战和风险，因此我们建议采用三个现代化步骤，每一步都能为业务产生价值，例如减少技术债务和运营成本，提高敏捷性：</p>
+<ol class="arabic simple">
+<li><p>运行时现代化（迁移到针对云和容器进行了优化的现代运行时）</p></li>
+<li><p>运营现代化（迁移到基于 Kubernetes 的平台）</p></li>
+<li><p>架构现代化（重构为单个可部署且可扩展的微服务）</p></li>
+</ol>
+<p>这种顺序是最常见的方法，不过运行时现代化和运营现代化可以按顺序进行，也可以同时进行。通常，是否选择首先进行运行时现代化可能取决于企业是否已选择并推出了容器平台战略，例如 Red Hat OpenShift。如果还没有，那么运行时现代化是为容器做好准备非常重要的第一步。</p>
+<p>我们来更详细地了解一下每个现代化步骤。</p>
+<div class="section" id="id8">
+<h3><span class="section-number">1.7.1. </span>第 1 步. 运行时现代化：减少运营成本和技术债务<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p><strong>操作</strong></p>
+<p>将现有应用程序从传统的运行时迁移到针对云和容器进行了优化的现代运行时。</p>
+<p><strong>价值</strong></p>
+<p>传统应用程序服务器非常适合您，并且具有高可用性和可靠性，那么为什么要进行现代化？传统应用程序服务器的问题不在于这些特性 — 而是在于达到使工作负载投入生产的程度所需的时间和成本，以及这些工作负载投入生产后的效率。</p>
+<p>现代敏捷交付最佳实践需要在由持续集成 (CI) 和持续交付 (CD) 流水线驱动、基于容器的部署中的轻量级运行时。这些方法消除了应用程序交付中的效率低下问题。它们可以：</p>
+<ul class="simple">
+<li><p>降低运营成本（轻量级运行时消耗更少的资源，并具有更高的吞吐量）</p></li>
+<li><p>减少技术债务（增强部署最新、安全且受支持的软件的能力）</p></li>
+</ul>
+<p>传统应用程序服务器运行时在设计时没有考虑敏捷性和上云，因此它们最终将限制您兑现云原生承诺的能力。没错，您可以通过将现有应用程序和运行时放入容器中来实现运营现代化（这是迈向云原生的有效措施），但最终，您还是需要迁移到专为敏捷交付现代应用程序而设计的现代运行时。</p>
+<p><strong>指南</strong></p>
+<p>实现应用程序现代化以便在 Liberty 上运行（Open Liberty，或者根据应用程序，在 WebSphere Liberty 上运行，因为 WebSphere Liberty 提供一些更老的传统 WebSphere 特定 API，您的应用程序可能正在使用这些）。牢记您要通过每个应用程序实现的目的。您可能想要通过采用容器/Kubernetes 实现运营现代化，并可能通过采用微服务实现架构现代化。您需要选择一个支持这个旅程的运行时。现代化的运行时需要支持整体式应用程序、微服务以及这两者所需的 API（Java EE、Jakarta EE、Eclipse MicroProfile 或 Spring Boot）。如果您选择的运行时不具有这些特征，那么您就不是在进行现代化 — 要么是在横向迁移到另一个传统运行时，要么是在进行重写，但重写很有可能带来更高的风险和更高的成本。由于 Liberty 支持 Java EE、Jakarta EE、MicroProfile 和 Spring Boot，而且能够针对特定工作负载定制运行时，因此是理想的选择。</p>
+<p>客户体验</p>
+<p>通过执行针对 Liberty 的运行时现代化，美国一家领先的医疗保健提供商将资源使用率优化了 75%，并将基础架构占用空间减少了一半。</p>
+<p>查看“Open Liberty 成为开发和部署微服务的理想之选的六大理由”（IBM Developer，2020 年 11 月），了解使用 Liberty 的好处。</p>
+<p>当然，迁移到新的运行时并非易事，因此我们建议使用 IBM Cloud Transformation Advisor 来获得帮助。Transformation Advisor 可以：</p>
+<ul class="simple">
+<li><p>评估您的现有应用程序甚至部署</p></li>
+<li><p>关于需要变更的领域以及完成这些变更所需工作提供指导</p></li>
+<li><p>生成配置以帮助完成迁移</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3><span class="section-number">1.7.2. </span>第 2 步. 运营现代化：降低成本和复杂性，并提高灵活性<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p><strong>操作</strong></p>
+<p>通过采用基于 Kubernetes 的容器编排平台，实现运营现代化。</p>
+<p><strong>价值</strong></p>
+<p>采用 OpenShift 之类的容器编排平台可以使您摆脱专有的部署和集群方法，例如传统的 WebSphere Network Deployment 单元。这样，您将获得诸多好处：</p>
+<p>通过技术和技能标准化，降低运营成本和复杂性。您将获得单一方法来在容器中部署、扩展和监控应用程序、数据库、缓存以及消息传递。
+提高跨私有云和公共云的运营可移植性。几乎所有的云都支持 Kubernetes，并且所有的主要云平台都支持 OpenShift。
+值得注意的是，Kubernetes 环境往往因云而异，因此，Kubernetes 可以在单一环境（例如 IBM Cloud Kubernetes Service）中为您带来一些好处，但如果选择多云管理的 Kubernetes 解决方案（例如 OpenShift），则可以在许多个云中带来这些好处。您可能不想部署到许多个云，或者认为自己不需要这样，但出于 GDPR 等监管原因，您可能不得不这么做。</p>
+<p><strong>指南</strong></p>
+<p>要迁移到容器编排平台，您需要开始构建包含应用程序和配置的最佳实践容器镜像，并基于提供公共库、运行时、Java 和底层操作系统的容器镜像进行构建。</p>
+<p>如果您已经执行了针对 Liberty 的运行时现代化，那么您现在所采用的运行时非常适合迁移到容器。Transformation Advisor 工具有助于创建容器镜像，并提供有关将配置从传统 WebSphere 部署迁移到 Kubernetes 部署的建议。此外，Liberty 的每个版本都在 Docker Hub 中提供了容器镜像：</p>
+<ul class="simple">
+<li><p>UBI 上的 WebSphere Liberty 容器镜像</p></li>
+<li><p>Ubuntu 上的 WebSphere Liberty 容器镜像</p></li>
+<li><p>UBI 上的 Open Liberty 容器镜像</p></li>
+<li><p>Ubuntu 上的 Open Liberty 容器镜像</p></li>
+</ul>
+<p>用于创建这些镜像的指令、脚本和 Dockerfile 都是开源的，您可以使用它们来构建自己的容器镜像：</p>
+<ul class="simple">
+<li><p>构建 WebSphere Liberty 容器镜像</p></li>
+<li><p>构建 Open Liberty 容器镜像</p></li>
+</ul>
+<p>最后，Open Liberty Operator 有助于在 Kubernetes 环境中实现 Liberty 部署和管理。此运算符在基于 Kubernetes 的平台中（该平台支持 Operator Framework，包括 OpenShift）与 WebSphere Liberty 和 Open Liberty 协同工作。</p>
+<p>如果您选择先进行运营现代化再进行运行时现代化，而且您的应用程序目前在诸如传统 WebSphere 之类的传统应用程序服务器上运行，则可以将应用程序和服务器部署在单个容器中，并使用 OpenShift 对其进行扩展。 注意，Kubernetes/OpenShift 中并不提供在 WebSphere ND 中可用的全部集群功能（例如，远程 EJB 集群），因此需要小心以确保应用程序正确运行和扩展。</p>
+<p>为了帮助使用传统 WebSphere Applications Server 实现运营现代化，IBM 针对当前支持的版本维护 Docker 镜像。</p>
+<p>将传统应用程序服务器迁移到容器只能作为迈向云原生的垫脚石。传统服务器运行时在设计时从未考虑过容器、现代 DevOps 实践或云原生最佳实践，例如十二要素应用程序。从长远来看，迁移到专为容器和微服务设计的运行时将获得更好的体验，而 Liberty 是理想的选择。</p>
+</div>
+<div class="section" id="id10">
+<h3><span class="section-number">1.7.3. </span>第 3 步. 架构现代化：实现最佳扩展和云原生敏捷性<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p><strong>操作</strong>
+将整体式应用程序重构为更细粒度的云原生微服务。</p>
+<p><strong>价值</strong>
+您已经通过迁移到基于 Kubernetes 的平台实现了运营现代化，并将整体式应用程序迁移到了专为容器和云进行了优化的运行时上运行。下一步是开始采用微服务。这样，您将能够真正释放云原生微服务的全部优势：</p>
+<p>通过持续集成和持续交付流水线，敏捷交付各个服务更新。交付更新不再受交付整个整体式应用程序的约束。
+能够独立扩展单个服务，以优化云使用和云成本的方式响应各种工作负载需求。</p>
+<p><strong>指南</strong>
+架构现代化有很多个方面，但第一步是要确定整体式应用程序中需要重构为微服务的功能。一种由 AI 支持的新工具称为 IBM Mono2Micro（beta 版可用 ），它可以分析整体式应用程序，并建议将“分区”作为要分为微服务的候选对象。您不必采用大爆炸方法来分解整个整体式应用程序。事实上，诸如“扼杀模式”之类的策略已成功应用为增量方法。</p>
+<p>在将整体式应用程序分解为微服务时，您不仅需要考虑如何分离业务逻辑，还要考虑如何分离任何关联数据。将您的应用程序重构为更小的可部署单元会有一些好处，可以用作为向独立微服务迈进的一步，但如果仍使用单片式数据存储来支持所有服务，那么您的服务仍然是耦合的。随着时间推移，可以成功采用数据现代化“扼杀”式数据解耦策略。这些策略包括为新服务设置单独的数据存储、批量数据复制、双重写入以及代理来自整体式应用程序的数据请求，以使新商店上线，并与整体式应用程序一起运行新服务。</p>
+<p>迁移到松散耦合的逻辑和数据的内在需求是了解对事务的影响。CAP 定理规定，只能同时保证一致性、可用性和分区容错性中的两个特质。 在传统应用程序中，使用分布式两阶段事务管理器来确保始终一致。如果将应用程序分解为数十个或数百个微服务，而且每个微服务都由自己的数据存储进行支持，这使分布式事务变得不切实际。这就产生了有利于可用性和接受最终一致性的方法。有两种方法可以实现上述目标：Sagas（例如 MicroProfile Long Running Actions）和命令查询职责分离 (CQRS)。从设计上看，在任何时间点，系统状态都可能是不一致的 — 视图数据可能无法立即反映最新更新，并且允许单独完成微服务之间的“协调”活动。</p>
+</div>
+</div>
+<div class="section" id="id11">
+<h2><span class="section-number">1.8. </span>构建新的云原生应用程序<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>对于特别具有挑战性的应用程序，而且现代化成本高于收益，则可以考虑从头开始构建新的云原生应用程序。这样，您就有可能实现前面现代化章节中概述的好处，例如降低基础设施成本和提高敏捷性。</p>
+<p>选择运行时以跨技能、技术和成本进行优化非常重要。如果要使现有应用程序现代化以及重写或编写新的应用程序，就有必要优化所使用的运行时和 API 数量。您选择的运行时应该有利于使用支持新的云原生 API（例如 MicroProfile）、现有 API（例如 Java EE）以及您可能使用的架构样式（例如整体式或微服务）的运行时。 还应考虑基础架构以及与使用该运行时相关的许可成本。不要假设所有新应用程序都应实现为微服务，因为这样做的收益和成本可能与您对应用程序的目标不符。</p>
+<p>考虑不同架构样式的利弊，有助于您选择合适的运行时，同时思考您为何可能需要使用 Liberty。</p>
+</div>
+<div class="section" id="devops">
+<h2><span class="section-number">1.9. </span>DevOps 的重要性<a class="headerlink" href="#devops" title="Permalink to this headline">¶</a></h2>
+<p>如果您已经在采用 DevOps、持续集成和持续交付，则需要考虑现代化对每个阶段的影响。本文讨论的每种现代化类型都会影响您的 DevOps 工作：在具有新运营功能的新运行时上构建、测试和部署。</p>
+<p>如果您尚未采用 DevOps、持续集成或持续交付，则需要将其纳入现代化策略中。在现代化旅程中尽早采用 DevOps 具有很多好处，但如果您迁移到微服务，则绝对必须采用 DevOps（例如，作为架构现代化或构建新应用程序的一部分）。仅凭劳动密集型的手动交付流程和孤立的组织，您的微服务策略无法取得成功。</p>
+</div>
+<div class="section" id="id12">
+<h2><span class="section-number">1.10. </span>许可灵活性有助于现代化<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>无论采用哪种现代化策略，您的软件基础架构需求都会不断演变。尽管一开始可能是在传统的 WebSphere Application Server 上运行现有应用程序，但随着不断进步，一些工作负载将迁移到 Liberty，并可能带有新的架构，例如在 Kubernetes 上运行的容器化微服务。</p>
+<p>IBM 提供了灵活的许可选项来帮助完成这个旅程。WebSphere Application Server 的每个单独版本均包含针对 Liberty 的权利。例如，您可以选择使用针对传统的 WebSphere 或 Liberty 的 WebSphere Application Server Network Deployment 权利。如果要在各个版本之间重新平衡，也可以使用 IBM WebSphere Application Server Family Edition 和 IBM Cloud Pak for Applications 之类的产品。您可以首先运行 WebSphere Application Server Network Deployment，然后等到需要在 Kubernetes 上部署到 Liberty 时，只需缩减所拥有的已部署 WebSphere Application Server Network Deployment 服务器的数量，并使用这些权利来部署 Liberty。</p>
+</div>
+<div class="section" id="id13">
+<h2><span class="section-number">1.11. </span>结束语<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<p>本文提供了一个用于为每个应用程序选择适当的现代化方法的框架。本文概述了如何将现代化旅程分为三个步骤，每个步骤都能实现价值，以及 Transformation Advisor 和 Mono2Micro 等工具如何提供帮助：</p>
+<ul class="simple">
+<li><p>运行时现代化：迁移到针对微服务和容器进行了优化的现代运行时，以减少基础架构成本和技术债务。</p></li>
+<li><p>运营现代化：迁移到基于 Kubernetes 的平台，以降低运营成本和复杂性，并提高跨公共云和私有云的可移植性。</p></li>
+<li><p>架构现代化：分解为单个可部署且可扩展的微服务，以提高交付敏捷性，并优化云资源的使用。</p></li>
+</ul>
+<p>本文描述了选择合适的运行时来支持现代化的重要性：支持整体式应用程序和微服务的运行时，两者所需的 API 以及 Liberty 为何是理想的运行时。本文还描述了 Kubernetes 作为通用云基础架构的好处，以及诸如 OpenShift 之类的平台如何真正实现跨公共云和私有云的自由部署。</p>
+<p>我们希望这些信息对您规划和执行现代化旅程有所帮助。</p>
+</div>
+<div class="section" id="id14">
+<h2><span class="section-number">1.12. </span>参考<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.ibm.com/cloud/application-modernization">https://www.ibm.com/cloud/application-modernization</a></p></li>
+<li><p><a class="reference external" href="https://developer.ibm.com/zh/depmodels/cloud/blogs/ibm-developer-en-2020-12/">https://developer.ibm.com/zh/depmodels/cloud/blogs/ibm-developer-en-2020-12/</a></p></li>
+<li><p><a class="reference external" href="https://developer.ibm.com/zh/languages/java/articles/modernize-your-valuable-java-applications/">https://developer.ibm.com/zh/languages/java/articles/modernize-your-valuable-java-applications/</a></p></li>
+<li><p><a class="reference external" href="https://www.ibm.com/downloads/cas/MLVGE07Y">https://www.ibm.com/downloads/cas/MLVGE07Y</a></p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="confluence.html" class="btn btn-neutral float-right" title="2. Confluence" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="应用程序现代化" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Murphy
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

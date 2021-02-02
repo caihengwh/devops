@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. Confluence</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Dokuwiki" href="dokuwiki.html" />
+    <link rel="prev" title="1. 应用程序现代化" href="start.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/DevOps.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">培训资料：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">1. 应用程序现代化</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Confluence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#docker-compose-yml">2.1. 准备docker-compose.yml文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">2.2. 启动 Confluence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">2.3. 获得授权码</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#jar">2.3.1. 获得授权码的原始Jar包</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2.3.2. 制作新的授权码Jar包</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2.3.3. 替换容器内原始授权码的Jar包</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">2.4. 配置及开始使用Confluence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">2.4.1. 配置用户管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">2.4.2. 创建管理员</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">2.4.3. 创建空间</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">2.4.4. 准备就绪</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">2.5. 熟悉数据库操作（可选）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pgadmin">2.5.1. 访问pgAdmin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#postgresql">2.5.2. 命令访问PostgreSQL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">2.6. 问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">2.7. 参考</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dokuwiki.html">3. Dokuwiki</a></li>
+<li class="toctree-l1"><a class="reference internal" href="redis.html">4. Redis(ToDo …)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elk.html">5. ELK(ToDo …)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitlab.html">6. Gitlab(ToDo …)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jenkins.html">7. Jenkins(ToDo …)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jira.html">8. JIRA(ToDo …)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="petclinic.html">9. Spring Cloud 开发框架(ToDo …)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wordpress.html">10. Wordpress(ToDo …)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kubernetes.html">11. K8s(ToDo …)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DevOps</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+                   
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+    <ul class="wy-breadcrumbs">
+        
+        <li><a href="../index.html">首页</a> &raquo;</li>
+        
+        <li><span class="section-number">2. </span>Confluence</li>
+         
+        <li class="wy-breadcrumbs-aside">
+            <a href="https://pages.github.ibm.com/fsd-training/ctube" class="fa fa-github"> CTube</a>   
+        </li>
+        
+    </ul>
+
+    
+    <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="confluence">
+<h1><span class="section-number">2. </span>Confluence<a class="headerlink" href="#confluence" title="Permalink to this headline">¶</a></h1>
+<p>Atlassian Confluence（简称Confluence）是一个专业的wiki程序。 它是一个知识管理的工具，通过它可以实现团队成员之间的协作和知识共享。 Confluence不是一个开源软件，非商业用途可以免费使用。目前，Confluence被用于广泛地用于项目团队，开发团队，市场销售团队。</p>
+<p>本章讲解如何使用Docker安装Confluence。</p>
+<div class="section" id="docker-compose-yml">
+<h2><span class="section-number">2.1. </span>准备docker-compose.yml文件<a class="headerlink" href="#docker-compose-yml" title="Permalink to this headline">¶</a></h2>
+<p>下载confluence目录文件，URL：<a class="reference external" href="https://github.ibm.com/fsd-training/devops/tree/master/confluence">https://github.ibm.com/fsd-training/devops/tree/master/confluence</a></p>
+<p>查阅confluence目录下文件：</p>
+<ol class="arabic simple">
+<li><p>docker-compose.yml  # docker-compose命令使用的文件</p></li>
+<li><p>start.sh # Linux 用户使用的 Shell 脚本，仅供Windows用户参考</p></li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h2><span class="section-number">2.2. </span>启动 Confluence<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>命令行进入confluence目录下，执行start.sh脚本。容器服务启动后，访问页面地址：<a class="reference external" href="http://localhost:8090">http://localhost:8090</a>，如图所示：</p>
+<a class="reference internal image-reference" href="../_images/confluence-setup.png"><img alt="../_images/confluence-setup.png" src="../_images/confluence-setup.png" style="width: 800px;" /></a>
+<p>按照页面提示，可以选择语言，然后点击下一步，进入安装界面。</p>
+<a class="reference internal image-reference" href="../_images/confluence-install.png"><img alt="../_images/confluence-install.png" src="../_images/confluence-install.png" style="width: 800px;" /></a>
+<p>选择“产品安装”，进入获得授权码（License）界面。记住下图中的服务器ID，稍后会用到。</p>
+<a class="reference internal image-reference" href="../_images/confluence-license.png"><img alt="../_images/confluence-license.png" src="../_images/confluence-license.png" style="width: 800px;" /></a>
+<p>你可以选择“获取试用授权”，下面介绍如何获取免费的授权码。</p>
+</div>
+<div class="section" id="id2">
+<h2><span class="section-number">2.3. </span>获得授权码<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>获得授权码的思路就是替换授权码的原始Jar包，使Confluence安装过程顺利进行。</p>
+<div class="section" id="jar">
+<h3><span class="section-number">2.3.1. </span>获得授权码的原始Jar包<a class="headerlink" href="#jar" title="Permalink to this headline">¶</a></h3>
+<p>命令行进入Docker容器，拷贝文件到本地。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -it confluence sh
+$ <span class="nb">cd</span> /opt/atlassian/confluence/confluence/WEB-INF/lib/
+$ ls atlassian-extras-decoder* <span class="c1"># 确认文件名及路径</span>
+atlassian-extras-decoder-api-3.4.1.jar  atlassian-extras-decoder-v2-3.4.1.jar
+$ docker cp  confluence:/opt/atlassian/confluence/confluence/WEB-INF/lib/atlassian-extras-decoder-v2-3.4.1.jar ./atlassian-extras-2.4.jar
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3><span class="section-number">2.3.2. </span>制作新的授权码Jar包<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>keygen.sh文件位于github仓库中。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sh keygen.sh
+</pre></div>
+</div>
+<p>按照界面提示，填写对应内容。</p>
+<a class="reference internal image-reference" href="../_images/confluence-genkey.png"><img alt="../_images/confluence-genkey.png" src="../_images/confluence-genkey.png" style="width: 600px;" /></a>
+<p>点击“patch”按钮，选择atlassian-extras-2.4.jar，点击“Open”按钮。
+一切就绪后，点击“gen”按钮生成授权码（License）秘钥，点击自动复制密钥，保存，稍后要用到。</p>
+<p>生成授权码的同时，还重新生成了新的atlassian-extras-2.4.jar，原来的文件备份为atlassian-extras-2.4.bak。</p>
+</div>
+<div class="section" id="id4">
+<h3><span class="section-number">2.3.3. </span>替换容器内原始授权码的Jar包<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ docker cp ./atlassian-extras-2.4.jar confluence:/opt/atlassian/confluence/confluence/WEB-INF/lib/atlassian-extras-decoder-v2-3.4.1.jar
+</pre></div>
+</div>
+<p>重启服务：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ docker-compose restart
+</pre></div>
+</div>
+<p>刷新页面，复制上个步骤生存的授权码（License）秘钥，粘贴到 Confluence 安装界面里。等待验证通过，点击“下一步”按钮，进入配置数据库界面。</p>
+<a class="reference internal image-reference" href="../_images/confluence-db.png"><img alt="../_images/confluence-db.png" src="../_images/confluence-db.png" style="width: 800px;" /></a>
+<p>接下来，我们配置数据库。</p>
+<p>在安装界面选择“我自己的数据库”，点击“下一步”按钮。</p>
+<p>填写数据库信息，注意数据库密码为：mypostgres</p>
+<a class="reference internal image-reference" href="../_images/confluence-postsql.png"><img alt="../_images/confluence-postsql.png" src="../_images/confluence-postsql.png" style="width: 800px;" /></a>
+<p>点击“下一步”按钮，等待Confluence设置数据库。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">2.4. </span>配置及开始使用Confluence<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3><span class="section-number">2.4.1. </span>配置用户管理<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/confluence-user.png"><img alt="../_images/confluence-user.png" src="../_images/confluence-user.png" style="width: 700px;" /></a>
+</div>
+<div class="section" id="id7">
+<h3><span class="section-number">2.4.2. </span>创建管理员<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/confluence-admin.png"><img alt="../_images/confluence-admin.png" src="../_images/confluence-admin.png" style="width: 700px;" /></a>
+</div>
+<div class="section" id="id8">
+<h3><span class="section-number">2.4.3. </span>创建空间<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/confluence-store.png"><img alt="../_images/confluence-store.png" src="../_images/confluence-store.png" style="width: 700px;" /></a>
+</div>
+<div class="section" id="id9">
+<h3><span class="section-number">2.4.4. </span>准备就绪<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/confluence-success.png"><img alt="../_images/confluence-success.png" src="../_images/confluence-success.png" style="width: 700px;" /></a>
+<p>当然了，详细的配置工作因人而异，等待一切就绪后，可以使用Confluence了。</p>
+<a class="reference internal image-reference" href="../_images/confluence-index.png"><img alt="../_images/confluence-index.png" src="../_images/confluence-index.png" style="width: 900px;" /></a>
+</div>
+</div>
+<div class="section" id="id10">
+<h2><span class="section-number">2.5. </span>熟悉数据库操作（可选）<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>下面介绍PostgreSQL 数据库的知识。</p>
+<div class="section" id="pgadmin">
+<h3><span class="section-number">2.5.1. </span>访问pgAdmin<a class="headerlink" href="#pgadmin" title="Permalink to this headline">¶</a></h3>
+<p>pgAdmin 是 PostgreSQL 数据库的开源管理和管理工具。它包括图形管理界面、SQL 查询工具、过程代码调试器等等。该工具旨在满足开发人员、DBA 和系统管理员的需求。</p>
+<p>启动容器后，访问URL：<a class="reference external" href="http://localhost5050">http://localhost5050</a>，进入pgAdmin管理界面。</p>
+<a class="reference internal image-reference" href="../_images/pgadmin.png"><img alt="../_images/pgadmin.png" src="../_images/pgadmin.png" style="width: 800px;" /></a>
+<p>创建服务：</p>
+<a class="reference internal image-reference" href="../_images/pgadmin-config.png"><img alt="../_images/pgadmin-config.png" src="../_images/pgadmin-config.png" style="width: 600px;" /></a>
+<p>访问数据库：</p>
+<a class="reference internal image-reference" href="../_images/pgadmin-index.png"><img alt="../_images/pgadmin-index.png" src="../_images/pgadmin-index.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="postgresql">
+<h3><span class="section-number">2.5.2. </span>命令访问PostgreSQL<a class="headerlink" href="#postgresql" title="Permalink to this headline">¶</a></h3>
+<p>用户可以使用命令行进入pgsql容器，对数据库进行操作：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -it confluence-db sh <span class="c1"># 进入pgsql容器</span>
+<span class="c1"># psql -U postgres  # 用户名 postgres 登入</span>
+psql <span class="o">(</span><span class="m">9</span>.4.26<span class="o">)</span>
+Type <span class="s2">&quot;help&quot;</span> <span class="k">for</span> help.
+
+<span class="nv">postgres</span><span class="o">=</span><span class="c1"># \l # 查询用户</span>
+                                List of databases
+Name    <span class="p">|</span>  Owner   <span class="p">|</span> Encoding <span class="p">|</span>  Collate   <span class="p">|</span>   Ctype    <span class="p">|</span>   Access privileges
+-----------+----------+----------+------------+------------+-----------------------
+postgres  <span class="p">|</span> postgres <span class="p">|</span> UTF8     <span class="p">|</span> en_US.utf8 <span class="p">|</span> en_US.utf8 <span class="p">|</span>
+template0 <span class="p">|</span> postgres <span class="p">|</span> UTF8     <span class="p">|</span> en_US.utf8 <span class="p">|</span> en_US.utf8 <span class="p">|</span> <span class="o">=</span>c/postgres          +
+        <span class="p">|</span>          <span class="p">|</span>          <span class="p">|</span>            <span class="p">|</span>            <span class="p">|</span> <span class="nv">postgres</span><span class="o">=</span>CTc/postgres
+template1 <span class="p">|</span> postgres <span class="p">|</span> UTF8     <span class="p">|</span> en_US.utf8 <span class="p">|</span> en_US.utf8 <span class="p">|</span> <span class="o">=</span>c/postgres          +
+        <span class="p">|</span>          <span class="p">|</span>          <span class="p">|</span>            <span class="p">|</span>            <span class="p">|</span> <span class="nv">postgres</span><span class="o">=</span>CTc/postgres
+<span class="o">(</span><span class="m">3</span> rows<span class="o">)</span>
+
+<span class="nv">postgres</span><span class="o">=</span><span class="c1"># CREATE DATABASE confluence WITH OWNER postgres; # 创建数据库</span>
+CREATE DATABASE
+<span class="nv">postgres</span><span class="o">=</span><span class="c1"># \q # 退出数据库</span>
+</pre></div>
+</div>
+<p>快捷键（Ctrl + D）退出容器控制台。</p>
+</div>
+</div>
+<div class="section" id="id11">
+<h2><span class="section-number">2.6. </span>问题<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>访问页面地址：<a class="reference external" href="http://localhost">http://localhost</a>:8090时，如果出现如图所示错误：</p>
+<a class="reference internal image-reference" href="../_images/confluence-setuperror.png"><img alt="../_images/confluence-setuperror.png" src="../_images/confluence-setuperror.png" style="width: 800px;" /></a>
+<p>按照错误的提示，是映射文件权限问题，Linux用户仅需要简单的执行命令：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>chmod -R <span class="m">777</span> .
+</pre></div>
+</div>
+<p>然后，重启服务，最后刷新页面，错误消失。</p>
+</div>
+<div class="section" id="id12">
+<h2><span class="section-number">2.7. </span>参考<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://gist.github.com/sebastian13/808c6363933943ad892f433db9d6dba7">https://gist.github.com/sebastian13/808c6363933943ad892f433db9d6dba7</a></p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dokuwiki.html" class="btn btn-neutral float-right" title="3. Dokuwiki" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="start.html" class="btn btn-neutral float-left" title="1. 应用程序现代化" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Murphy
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
